@@ -12,6 +12,10 @@ const routes: Routes = [
       { path: '', component: HomePageComponent },
       { path: 'post/:id', component: PostPageComponent }
     ]
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   }
 ];
 
