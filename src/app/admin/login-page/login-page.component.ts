@@ -22,6 +22,9 @@ export class LoginPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if (this.auth.isAuthenticated()) {
+      this.router.navigate(['/admin', 'dashboard']);
+    }
     this.route.queryParams.subscribe((params) => {
       if (params['loginAgain']) {
         this.message = 'Please, Login';
